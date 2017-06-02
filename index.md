@@ -6,55 +6,66 @@ This utility provide a way to manage your blynk server from Command-Line Interfa
 
 This is a work in progress and fully experimental utility. You should not try to use it in production.
 
-# Installation
-## Dependencies
+## Documentation
+Docs are available on https://readthedocs.io/ :
+
+[English](https://blynk-cligithubio.readthedocs.io/) - [Français](https://blynk-cli-fr.readthedocs.io/fr/latest/)
+
+## Installation
+### Dependencies
 Please, make sure your configuration respect the following pre-requisite:
 
 * Java 8
 * NodeJS >= 4.6.1
 * npm (or alike)
 
-## Installation
-On linux, run the following command as super-user to install Blynk CLI:
+### Installation
+You can install Blynk CLI with NPM:
 ```console
-npm install -g blynk-cli
+$ npm install -g blynk-cli
 ```
 
-# Usage
-## Show help
+## Usage
+### Show help
 Once Blynk CLI installed, you can show help about existing commands by typing:
 ```console
-blynkcli
+$ blynk-cli
 # OR
-blynk-cli help
+$ blynk-cli help
 # OR
-blynk-cli --help
+$ blynk-cli --help
 ```
 
-## Install Blynk Server
+### Install Blynk Server
 Once Blynk CLI installed, you'll have to install Blynk server by running:
 ```console
-blynk-cli server install
+$ blynk-cli server install
+[INFO] Downloading Blynk server v0.24.5
+[INFO] Creating default configuration
+[OK] Installation complete
 ```
 
-## Update Blynk Server
+### Update Blynk Server
 You can update Blynk Server to the latest version by running:
 ```console
-blynk-cli server update
+$ blynk-cli server update
+[INFO] Update v0.24.6 available. Downloading...
+[OK] Update complete
+[OK] Backup done! You can find it in /home/booteille/.blynkcli/backup/auto-update/b1045268-2f32-4e24-85a3-fb740266d417
 ```
 
-## Start/Stop/Restart Server
+### Start/Stop/Restart Server
 ```console
-blynk-cli server start
+$ blynk-cli server start
 
-blynk-cli server status # Display status of Blynk server
+$ blynk-cli server status # Display status of Blynk server
 
-blynk-cli server stop
+$ blynk-cli server stop
 
-blynk-cli server restart
+$ blynk-cli server restart
 ```
 
-## Make a backup
+### Make a backup
 You can backup your data folder by typing:
 ```console
 $ blynkcli backup create BACKUP
@@ -80,7 +91,7 @@ $ cat /home/booteille/.blynkcli/backup/backups.lock
 ]
 ```
 
-## Restore from a backup
+### Restore from a backup
 If you want to restore your data folder from a desired backup, you have to type:
 ```console
 $ blynkcli backup restore BACKUP
@@ -108,7 +119,7 @@ $ blynkcli backup restore /cee
 [OK] Restored from backup /home/booteille/.blynkcli/backup/BACKUP/cee3acd3-1190-4501-bfc1-ba10423c1a07
 ```
 
-## Add an user
+### Add an user
 You can add a new user by typing:
 ```console
 $ blynkcli user add
@@ -119,7 +130,7 @@ $ blynkcli user add
 [OK] User booteille@booteille.com added
 ```
 
-## Change user properties
+### Change user properties
 You can change an user property by typing:
 ```console
 $ blynkcli user set booteille@booteille.com energy 15000
@@ -132,7 +143,7 @@ $ blynkcli user get booteille@booteille.com energy
 energy: 15000
 ```
 
-## Clone Projects from one user to another
+### Clone Projects from one user to another
 ```console
 blynkcli user clone-projects booteille@booteille.com admin@blynk.cc
 [OK] admin@blynk.cc projects cloned from booteille@booteille.com
@@ -140,7 +151,7 @@ blynkcli user clone-projects booteille@booteille.com admin@blynk.cc
 [OK] Backup done! You can find it in /home/sephir/.blynkcli/backup/auto-cloneProfile/07221e9e-3f09-46dc-914a-
 ```
 
-## Change user password
+### Change user password
 ```console
 blynkcli user password booteille@booteille.com
 ? Password:  [hidden]
